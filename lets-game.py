@@ -17,3 +17,5 @@ while True:
     # Rysowanie kwadratu
     pygame.draw.rect(screen, (20, 100, 255), pygame.Rect(10, 50, 200, 100))
     pygame.display.flip()
+
+#Pojawił się nowy collaborator
