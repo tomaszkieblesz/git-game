@@ -1,21 +1,34 @@
-import matplotlib, sys
-
-import requests
-
+import sys
 import pygame
+from settings import Settings
+from ship import Ship
 
-print(pygame.__version__)
-screen = pygame.display.set_mode((400, 300))
+# Inicjalizacja gry i utworzenie obiektu ekranu
+pygame.init()
+ai_settings = Settings()
+pygame.display.set_mode(
+    (ai_settings.screen_width, ai_settings.screen_height))
+moja_ikona=pygame.image.load('images/ship.bmp')
+k=moja_ikona.get_rect()
 
 
-# Pętla nasłuchująca
+
+print(k)
+screen=pygame.display.get_surface()
+moja_ikona=moja_ikona.convert()
+screen.blit(moja_ikona, (20,20))
+pygame.display.flip()
+
+
+
+# Pętla główna
 while True:
+    czas=pygame.time.get_ticks()
     for event in pygame.event.get():
-        if event == pygame.QUIT:
-            sys.exit(0)
+        if event.type == pygame.QUIT:
+            sys.exit()
+        elif event.type == pygame.MOUSEMOTION:
+            print(czas/1000)
 
-    # Rysowanie kwadratu
-    pygame.draw.rect(screen, (20, 100, 255), pygame.Rect(10, 50, 200, 100))
-    pygame.display.flip()
 
-#Pojawił się nowy collaborator
+    
