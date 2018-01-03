@@ -6,8 +6,6 @@ window=pygame.display.set_mode((800,600), 0, 32)
 
 
 
-
-
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -19,3 +17,4 @@ while True:
         window.set_at(random_pos, random_color)
         pygame.display.flip()
 
+#Ok spróbujmy jak sie pracuje na gałęzi PRO
