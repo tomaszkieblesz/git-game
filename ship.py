@@ -1,4 +1,5 @@
-import pygame, sys, random
+import pygame
+
 
 pygame.init()
 
@@ -18,3 +19,7 @@ while True:
         pygame.display.flip()
 
 #Ok spróbujmy jak sie pracuje na gałęzi PRO
+
+
+
+
