@@ -1,15 +1,22 @@
-import pygame
-import sys
-
-pygame.init()
-
-window=pygame.display.set_mode((800, 600))
+#Czy gałąź pro jest aktywna?
+#from string import ascii_letters
 
 
-while True:
-    
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            sys.exit()
+sentencja=input()
 
-pygame.display.update()
+sent=sentencja.lower()
+
+ALFABET="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNMęĘóÓłńŃŁŻŹćżźśŚ"
+
+for x in sent:
+    if x in (ALFABET):
+        mfl="".join(x)
+        print(mfl)
+
+
+
+
+
+
+
+
