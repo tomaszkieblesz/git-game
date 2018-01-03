@@ -1,20 +1,21 @@
-import pygame
+import pygame, sys, random
+
+pygame.init()
+
+window=pygame.display.set_mode((800,600), 0, 32)
 
 
-class Ship():
 
-    def __init__(self, screen):
-        """Inicjalizacja statku i jego położenie początkwe"""
-        self.screen = screen
-        #Wczytanie fot statku 
-        self.image=pygame.image.load('images/ship.bmp')
-        self.rect=self.image.get_rect()
-        self.screen_rect=screen.get_rect()
 
-        #Każdy nowy statek pojawia sie na dole ekranu
-        self.rect.centerx=self.screen_rect.centerx
-        self.rect.bottom=self.screen_rect.bottom
 
-    def blitme(self):
-        """Wyświetlanie statku w jego aktualnym położeniu"""
-        self.screen.blit(self.image, self.rect)
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+    for x in range(100):
+        random_color= (random.randint(0,255), random.randint(0, 255), random.randint(0,255))
+        random_pos=(random.randint(0,800), random.randint(0,600))
+        window.set_at(random_pos, random_color)
+        pygame.display.flip()
+
